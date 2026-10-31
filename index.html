@@ -31,18 +31,16 @@
     :root {
       --gold-primary: #D4AF37;
       --gold-light: #F3E5AB;
-      --gold-dark: #997A15;
+      --gold-dark: #8C6516;
       --gold-gradient: linear-gradient(135deg, #ECC872 0%, #D4AF37 50%, #A67C1E 100%);
-      --crimson-royal: #6B0E1E;
+      --crimson-royal: #6E0E1E;
       --maroon-dark: #38070F;
       --emerald-accent: #0E4429;
       --mustard-mehndi: #E5A93C;
-      --cream-bg: #FDF9F3;
       --text-dark: #2A1D15;
       --text-gold: #966C23;
       --text-muted: #6B5B52;
-      --card-shadow: 0 15px 35px rgba(42, 29, 21, 0.08);
-      --border-gold: rgba(212, 175, 55, 0.35);
+      --border-gold: rgba(212, 175, 55, 0.4);
     }
 
     html, body {
@@ -51,32 +49,32 @@
       background-color: #0b0607;
       color: var(--text-dark);
       font-family: 'Montserrat', sans-serif;
-      overflow-x: hidden;
+      overflow: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
     /* Outer Desktop Canvas (Atmospheric Luxury Display) */
     .outer-viewport {
-      min-height: 100vh;
-      width: 100%;
+      width: 100vw;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       background: radial-gradient(circle at 50% 30%, #240e14 0%, #120508 60%, #080203 100%);
       position: relative;
-      padding: 24px 16px;
+      padding: 16px;
     }
 
-    /* Ambient Gold Light Cone behind iPhone */
+    /* Ambient Gold Light Glow behind Device */
     .outer-viewport::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 600px;
-      height: 900px;
+      width: 650px;
+      height: 950px;
       background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, rgba(107, 14, 30, 0.15) 45%, transparent 70%);
       pointer-events: none;
       z-index: 0;
@@ -90,22 +88,22 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      max-width: 480px;
-      margin-bottom: 16px;
-      padding: 10px 18px;
+      max-width: 440px;
+      margin-bottom: 12px;
+      padding: 8px 16px;
       background: rgba(25, 10, 14, 0.7);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(212, 175, 55, 0.25);
       border-radius: 40px;
       color: #FDF9F3;
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .desktop-bar-brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       font-family: 'Cinzel', serif;
       font-weight: 700;
       letter-spacing: 1.5px;
@@ -115,7 +113,7 @@
     .desktop-bar-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .desktop-btn {
@@ -124,18 +122,17 @@
       color: #FDF9F3;
       padding: 5px 12px;
       border-radius: 20px;
-      font-size: 11px;
+      font-size: 10.5px;
       font-family: 'Montserrat', sans-serif;
       cursor: pointer;
       transition: all 0.2s ease;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
 
     .desktop-btn:hover {
-      background: rgba(212, 175, 55, 0.2);
+      background: rgba(212, 175, 55, 0.25);
       border-color: var(--gold-primary);
     }
 
@@ -147,19 +144,21 @@
       z-index: 5;
       width: 390px;
       height: 844px;
+      max-height: calc(100vh - 80px);
+      aspect-ratio: 9 / 19.5;
       background: #000;
-      border-radius: 54px;
+      border-radius: 52px;
       box-shadow: 
-        0 0 0 4px #2b2623,            /* Inner Dark Titanium Frame */
-        0 0 0 8px #685d56,            /* Natural Titanium Rim */
-        0 0 0 10px #181513,           /* Outer Bezel Accent */
-        0 25px 70px rgba(0, 0, 0, 0.8),/* Depth Shadow */
+        0 0 0 4px #2b2623,
+        0 0 0 8px #685d56,
+        0 0 0 10px #181513,
+        0 25px 70px rgba(0, 0, 0, 0.8),
         0 50px 120px rgba(0, 0, 0, 0.9);
       overflow: hidden;
       user-select: none;
     }
 
-    /* Titanium Side Buttons (Mute switch, Volume, Power) */
+    /* Titanium Hardware Buttons */
     .iphone-device::before {
       content: '';
       position: absolute;
@@ -183,13 +182,13 @@
       border-radius: 0 3px 3px 0;
     }
 
-    /* iPhone Screen Glass (Hardware inner screen) */
+    /* iPhone Screen Glass */
     .iphone-screen {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      border-radius: 48px;
+      border-radius: 46px;
       overflow: hidden;
       background: #12070a;
     }
@@ -201,7 +200,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 115px;
-      height: 32px;
+      height: 30px;
       background: #000;
       border-radius: 20px;
       z-index: 10000;
@@ -214,8 +213,8 @@
     }
 
     .island-lens {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: #090a12;
       border: 1px solid #1c1d2e;
@@ -232,23 +231,18 @@
     }
 
     /* ==========================================================================
-       INNER CARD INVITATION APP (SCROLL CONTAINER)
+       INNER CARD INVITATION APP (PAGINATED SNAP-SCROLL CONTAINER)
        ========================================================================== */
     .app-scroll-container {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      overflow-y: auto;
+      overflow-y: scroll;
       overflow-x: hidden;
+      scroll-snap-type: y mandatory;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      /* Background Image Applied Universally Across All Frames */
-      background-image: url('assets/images/bg-card.webp'), url('assets/images/bg-card.jpg');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: repeat-y;
-      background-attachment: local;
     }
 
     .app-scroll-container::-webkit-scrollbar {
@@ -261,10 +255,112 @@
     }
 
     /* ==========================================================================
+       INDIVIDUAL 9:16 FULL-VIEWPORT PAGES (EXACTLY 1 VIEWPORT EACH)
+       ========================================================================== */
+    .invite-page {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      /* Background image fitted 100% to this 9:16 viewport with entire gold border visible */
+      background-image: url('assets/images/bg-card.webp'), url('assets/images/bg-card.jpg');
+      background-size: 100% 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding: clamp(75px, 11.5vh, 105px) clamp(30px, 8.5vw, 46px) clamp(65px, 9.5vh, 85px);
+      text-align: center;
+    }
+
+    /* Page Inner Content Container (Fitted comfortably in ivory center, STRICTLY NO OVERLAP) */
+    .page-inner-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: min(280px, 78vw);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(6px, 1.8vh, 14px);
+      padding: 0;
+    }
+
+    /* Subtle Down Indicator on each page */
+    .page-next-cue {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      color: var(--gold-dark);
+      font-size: 8px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      animation: bounceCue 2s infinite ease-in-out;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .page-next-cue svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--gold-dark);
+    }
+
+    @keyframes bounceCue {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(4px); }
+    }
+
+    /* ==========================================================================
+       SIDE PAGINATION DOTS (1 TO 6)
+       ========================================================================== */
+    .pagination-tracker {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 6500;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .tracker-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(140, 101, 22, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .tracker-dot.is-active {
+      height: 16px;
+      border-radius: 4px;
+      background: var(--crimson-royal);
+      box-shadow: 0 0 6px rgba(110, 14, 30, 0.5);
+    }
+
+    /* ==========================================================================
        1. CINEMATIC OPENING GATE & VIDEO RITUAL
        ========================================================================== */
     .gate-overlay {
-      position: fixed;
+      position: absolute;
       inset: 0;
       z-index: 8000;
       background: #0d0407;
@@ -286,7 +382,7 @@
       display: none !important;
     }
 
-    /* Gate Video & First Frame Poster */
+    /* Gate Video & First Frame Poster (Both exactly 9:16) */
     .gate-video-wrap {
       position: absolute;
       inset: 0;
@@ -324,7 +420,6 @@
       pointer-events: none;
     }
 
-    /* Gate Gradient Scrim for Readability */
     .gate-scrim {
       position: absolute;
       inset: 0;
@@ -338,7 +433,6 @@
       transition: opacity 0.6s ease;
     }
 
-    /* Gate HUD Text & Breathing Tap Button */
     .gate-hud {
       position: relative;
       z-index: 10;
@@ -346,8 +440,8 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 40px 24px;
-      max-width: 360px;
+      padding: 30px 20px;
+      max-width: 320px;
       width: 100%;
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
@@ -358,60 +452,59 @@
       transform: translateY(-15px);
     }
 
-    .bismillah-text {
+    .bismillah-gate {
       font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 22px;
+      font-size: 20px;
       color: var(--gold-light);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       text-shadow: 0 2px 10px rgba(0,0,0,0.8);
       line-height: 1.8;
     }
 
     .gate-subtitle {
       font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 4px;
+      font-size: 9.5px;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
       color: #E8D08D;
       opacity: 0.9;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .gate-title {
       font-family: 'Playfair Display', serif;
-      font-size: 38px;
+      font-size: 34px;
       font-weight: 700;
       color: #FFFAF0;
       line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       text-shadow: 0 4px 20px rgba(0,0,0,0.9);
     }
 
     .gate-urdu-kicker {
       font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 16px;
+      font-size: 15px;
       color: #ECC872;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
-    /* Beautiful "Tap to Open" Luxury Pill */
     .tap-to-open-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      background: rgba(28, 12, 16, 0.85);
+      gap: 8px;
+      background: rgba(28, 12, 16, 0.88);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1.5px solid var(--gold-primary);
       color: #FFFDF9;
       font-family: 'Cinzel', serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 40px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.35);
       animation: pulseTap 2.4s infinite alternate ease-in-out;
@@ -433,9 +526,9 @@
 
     .tap-subtext {
       font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 11px;
+      font-size: 10px;
       color: #E2CE9C;
-      margin-top: 10px;
+      margin-top: 8px;
       opacity: 0.85;
       text-shadow: 0 2px 6px rgba(0,0,0,0.8);
     }
@@ -456,14 +549,14 @@
        3. FLOATING MUSIC BUTTON (LOWER RIGHT CORNER)
        ========================================================================== */
     .music-fab {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
       z-index: 7000;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: rgba(28, 12, 16, 0.85);
+      background: rgba(28, 12, 16, 0.88);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1.5px solid var(--gold-primary);
@@ -481,20 +574,19 @@
       box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
     }
 
-    /* Animated Sound Bars inside Fab */
     .music-bars {
       display: flex;
       align-items: flex-end;
-      gap: 3px;
-      height: 18px;
+      gap: 2.5px;
+      height: 16px;
     }
 
     .music-bar {
-      width: 3px;
+      width: 2.5px;
       background: var(--gold-primary);
       border-radius: 2px;
       transition: height 0.2s ease;
-      height: 5px;
+      height: 4px;
     }
 
     .music-fab.is-playing .music-bar:nth-child(1) { animation: soundBar 0.9s infinite alternate ease-in-out; }
@@ -503,346 +595,295 @@
     .music-fab.is-playing .music-bar:nth-child(4) { animation: soundBar 1.1s infinite alternate ease-in-out 0.1s; }
 
     @keyframes soundBar {
-      0% { height: 4px; }
-      100% { height: 18px; background: #FFF1BD; }
+      0% { height: 3px; }
+      100% { height: 16px; background: #FFF1BD; }
     }
 
     /* ==========================================================================
-       4. WEDDING INVITATION CARD CONTENT
+       TYPOGRAPHY & PAGE COMPONENTS (DESIGNED FOR PERFECT ZERO-OVERLAP RENDERING)
        ========================================================================== */
-    .card-content {
-      position: relative;
-      z-index: 100;
-      width: 100%;
-      min-height: 100%;
-      padding: 60px 24px 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .bismillah-card {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 15px;
+      color: var(--gold-dark);
+      line-height: 1.8;
     }
 
-    /* Floating VIP Guest Pass */
-    .vip-guest-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(28, 12, 16, 0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--gold-primary);
-      color: var(--gold-light);
-      padding: 7px 18px;
-      border-radius: 30px;
-      font-size: 11px;
-      font-family: 'Cinzel', serif;
-      letter-spacing: 1.5px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-      margin-bottom: 24px;
-      text-transform: uppercase;
-    }
-
-    .vip-guest-pill span.dot {
-      color: #FFD700;
-    }
-
-    /* Monogram Crest */
     .crest-wrapper {
-      margin-bottom: 16px;
-      width: 64px;
-      height: 64px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       border: 1.5px solid var(--gold-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 80%);
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
     }
 
     .crest-initials {
       font-family: 'Cinzel', serif;
-      font-size: 20px;
+      font-size: 14.5px;
       font-weight: 700;
-      color: var(--gold-primary);
-      letter-spacing: 2px;
+      color: var(--gold-dark);
+      letter-spacing: 1.5px;
     }
 
-    /* Quranic Verse Block */
-    .quran-box {
-      text-align: center;
-      margin-bottom: 30px;
-      max-width: 330px;
-    }
-
-    .quran-arabic {
-      font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 17px;
-      color: #4A3828;
-      line-height: 2;
-      margin-bottom: 8px;
-    }
-
-    .quran-trans {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Families & Couple Section */
-    .hosts-kicker {
+    .page-kicker {
       font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 3px;
+      font-size: 8.5px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--text-gold);
-      margin-bottom: 6px;
-      text-align: center;
     }
 
-    .hosts-names {
+    .hosts-block {
       font-family: 'Playfair Display', serif;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--text-dark);
-      text-align: center;
-      margin-bottom: 18px;
       line-height: 1.4;
     }
 
-    .invite-honor-text {
-      font-size: 11px;
-      letter-spacing: 1.5px;
+    .invite-text {
+      font-size: 8.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 18px;
-      text-align: center;
+      line-height: 1.35;
+      max-width: 250px;
     }
 
-    /* Grand Couple Display */
-    .couple-title-wrap {
-      text-align: center;
-      margin-bottom: 24px;
+    .couple-names-wrap {
+      margin: 2px 0;
     }
 
     .groom-name, .bride-name {
       font-family: 'Playfair Display', serif;
-      font-size: 34px;
+      font-size: clamp(20px, 3vh, 24px);
       font-weight: 700;
       color: var(--crimson-royal);
-      line-height: 1.1;
+      line-height: 1.15;
       letter-spacing: 0.5px;
     }
 
     .ampersand {
       font-family: 'Cinzel', serif;
-      font-size: 24px;
+      font-size: 15px;
       font-weight: 400;
       color: var(--gold-dark);
-      margin: 4px 0;
+      margin: 1px 0;
       display: block;
     }
 
     .parentage-line {
-      font-size: 11px;
+      font-size: 8.5px;
       color: var(--text-muted);
       font-style: italic;
-      margin-top: 4px;
     }
 
-    /* Live Countdown Clock */
+    /* Quran & Poetry Page */
+    .quran-box {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .quran-arabic {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 13.5px;
+      color: #38271A;
+      line-height: 1.85;
+    }
+
+    .quran-trans {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .poetry-box {
+      border-top: 1px dashed rgba(212, 175, 55, 0.4);
+      padding-top: 8px;
+      margin-top: 3px;
+    }
+
+    .urdu-shair {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 12.5px;
+      color: var(--crimson-royal);
+      line-height: 1.95;
+    }
+
+    /* Real-time Countdown Card */
     .countdown-card {
       width: 100%;
-      background: rgba(255, 255, 255, 0.6);
+      max-width: 100%;
+      background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid var(--border-gold);
-      border-radius: 20px;
-      padding: 16px 12px;
-      margin: 10px 0 35px;
-      box-shadow: var(--card-shadow);
-      text-align: center;
+      border-radius: 14px;
+      padding: 9px 8px;
+      box-shadow: 0 6px 20px rgba(42, 29, 21, 0.05);
     }
 
     .countdown-label {
       font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 3px;
+      font-size: 7.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--gold-dark);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      gap: 5px;
     }
 
     .countdown-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 6px 2px;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 12px;
-      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 3px 2px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     .countdown-num {
       font-family: 'Cinzel', serif;
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--crimson-royal);
     }
 
     .countdown-unit {
-      font-size: 9px;
-      letter-spacing: 1px;
+      font-size: 7px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
-    /* ==========================================================================
-       5. MULTI-EVENT ITINERARY (MEHNDI, BARAAT, WALIMA)
-       ========================================================================== */
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      text-align: center;
-      margin-bottom: 20px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-    }
-
-    .section-title::before, .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--border-gold), transparent);
-    }
-
-    .events-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 35px;
-    }
-
-    .event-card {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--border-gold);
-      border-radius: 24px;
-      padding: 22px 18px;
-      box-shadow: var(--card-shadow);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.25s ease;
-    }
-
-    .event-card:hover {
-      transform: translateY(-2px);
-    }
-
-    .event-badge {
+    /* Event Pages Styles */
+    .event-badge-pill {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 9px;
+      font-size: 7.5px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 4px 14px;
+      padding: 3px 12px;
       border-radius: 20px;
-      margin-bottom: 10px;
     }
 
-    .event-badge.mehndi {
+    .event-badge-pill.mehndi {
       background: rgba(229, 169, 60, 0.2);
-      color: #9E6B0F;
-      border: 1px solid rgba(229, 169, 60, 0.4);
+      color: #946205;
+      border: 1px solid rgba(229, 169, 60, 0.5);
     }
 
-    .event-badge.baraat {
-      background: rgba(107, 14, 30, 0.15);
+    .event-badge-pill.baraat {
+      background: rgba(110, 14, 30, 0.15);
       color: var(--crimson-royal);
-      border: 1px solid rgba(107, 14, 30, 0.3);
+      border: 1px solid rgba(110, 14, 30, 0.35);
     }
 
-    .event-badge.walima {
+    .event-badge-pill.walima {
       background: rgba(14, 68, 41, 0.15);
       color: var(--emerald-accent);
-      border: 1px solid rgba(14, 68, 41, 0.3);
+      border: 1px solid rgba(14, 68, 41, 0.35);
     }
 
-    .event-heading {
+    .event-main-title {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
+      font-size: clamp(19px, 2.7vh, 23px);
       font-weight: 700;
       color: var(--text-dark);
-      margin-bottom: 6px;
+      line-height: 1.15;
+      margin: 2px 0 1px;
     }
 
-    .event-urdu {
+    .event-urdu-title {
       font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 15px;
+      font-size: 12.5px;
       color: var(--gold-dark);
-      margin-bottom: 12px;
+      margin-bottom: 5px;
     }
 
-    .event-meta {
+    .event-details-card {
+      width: 100%;
+      max-width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 9px 11px;
+      box-shadow: 0 8px 20px rgba(42, 29, 21, 0.05);
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-dark);
-      line-height: 1.5;
+      gap: 5px;
+      text-align: left;
     }
 
-    .meta-row {
+    .detail-row {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 6px;
+      font-size: 10px;
+      color: var(--text-dark);
+      line-height: 1.35;
     }
 
-    .meta-icon {
-      font-size: 13px;
-      color: var(--gold-dark);
+    .detail-icon {
+      font-size: 11px;
       flex-shrink: 0;
       margin-top: 1px;
     }
 
-    .event-dresscode {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px dashed rgba(212, 175, 55, 0.3);
-      font-size: 11px;
+    .event-dress-line {
+      font-size: 9px;
       color: var(--text-muted);
       font-style: italic;
+      border-top: 1px dashed rgba(212, 175, 55, 0.3);
+      padding-top: 5px;
+      margin-top: 1px;
     }
 
-    /* ==========================================================================
-       6. PAKISTANI ACTION BAR (MAPS, SALAMI, RSVP)
-       ========================================================================== */
+    /* Page 6: RSVP & Convenience */
+    .vip-guest-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(28, 12, 16, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 8.5px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-transform: uppercase;
+      max-width: 95%;
+    }
+
     .actions-grid {
       width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 40px;
+      gap: 7px;
+      margin: 5px 0;
     }
 
     .action-cta-btn {
@@ -850,30 +891,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 20px;
-      border-radius: 16px;
+      gap: 6px;
+      padding: 9.5px 12px;
+      border-radius: 12px;
       font-family: 'Cinzel', serif;
-      font-size: 12px;
+      font-size: 9.5px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      text-decoration: none;
       cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
       border: none;
     }
 
     .btn-rsvp {
       background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       color: #FFF;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 5px 16px rgba(37, 211, 102, 0.3);
     }
 
     .btn-rsvp:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
     }
 
     .btn-map {
@@ -884,7 +923,6 @@
 
     .btn-map:hover {
       background: #FAF6EF;
-      border-color: var(--gold-primary);
     }
 
     .btn-raast {
@@ -895,21 +933,96 @@
 
     .btn-raast:hover {
       background: #4A1A24;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
     }
 
-    /* Toast Notification for Raast Copy */
+    .footer-signoff-block {
+      font-size: 8.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .footer-urdu-line {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 11.5px;
+      color: var(--gold-dark);
+      margin-bottom: 1px;
+    }
+
+    .footer-atelier-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 7.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      opacity: 0.8;
+      margin-top: 3px;
+    }
+
+    .btn-rsvp {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #FFF;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-rsvp:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-map {
+      background: #FFF;
+      color: var(--text-dark);
+      border: 1px solid var(--border-gold);
+    }
+
+    .btn-map:hover {
+      background: #FAF6EF;
+    }
+
+    .btn-raast {
+      background: linear-gradient(135deg, #1C1014 0%, #38151D 100%);
+      color: var(--gold-light);
+      border: 1px solid var(--gold-primary);
+    }
+
+    .btn-raast:hover {
+      background: #4A1A24;
+    }
+
+    .footer-signoff-block {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-urdu-line {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 12.5px;
+      color: var(--gold-dark);
+      margin-bottom: 2px;
+    }
+
+    .footer-atelier-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    /* Toast Notification */
     .toast-msg {
-      position: fixed;
-      bottom: 85px;
+      position: absolute;
+      bottom: 75px;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
       background: #1C0F14;
       border: 1px solid var(--gold-primary);
       color: #FFF9E6;
-      padding: 10px 24px;
+      padding: 8px 20px;
       border-radius: 30px;
-      font-size: 12px;
+      font-size: 11px;
       font-family: 'Cinzel', serif;
       letter-spacing: 1px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.7);
@@ -925,34 +1038,6 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Luxury Footer Sign-off */
-    .footer-signoff {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 11px;
-      line-height: 1.8;
-      border-top: 1px solid var(--border-gold);
-      padding-top: 24px;
-      width: 100%;
-    }
-
-    .footer-urdu {
-      font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 14px;
-      color: var(--gold-dark);
-      margin-bottom: 6px;
-    }
-
-    .footer-brand {
-      margin-top: 16px;
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      opacity: 0.8;
-    }
-
     /* ==========================================================================
        RESPONSIVE ADAPTATION (MOBILE PHONE NATIVE VIEW)
        ========================================================================== */
@@ -960,13 +1045,11 @@
       .outer-viewport {
         padding: 0 !important;
         background: transparent !important;
-        min-height: 100dvh;
+        height: 100dvh !important;
+        width: 100vw !important;
       }
 
-      .outer-viewport::before {
-        display: none !important;
-      }
-
+      .outer-viewport::before,
       .desktop-bar {
         display: none !important;
       }
@@ -974,13 +1057,17 @@
       .iphone-device {
         width: 100vw !important;
         height: 100dvh !important;
+        max-height: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
         border: none !important;
+        aspect-ratio: auto !important;
       }
 
       .iphone-device::before,
-      .iphone-device::after {
+      .iphone-device::after,
+      .dynamic-island,
+      .screen-glare {
         display: none !important;
       }
 
@@ -988,19 +1075,9 @@
         border-radius: 0 !important;
       }
 
-      .dynamic-island {
-        display: none !important;
-      }
-
-      .screen-glare {
-        display: none !important;
-      }
-
       .music-fab {
-        bottom: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
+        bottom: 18px;
+        right: 18px;
       }
     }
   </style>
@@ -1010,7 +1087,7 @@
   <!-- ==================== OUTER DESKTOP PRESENTATION ==================== -->
   <div class="outer-viewport">
 
-    <!-- Top Utility Bar (Visible on Desktop / Tablets) -->
+    <!-- Top Utility Bar (Visible on Desktop) -->
     <header class="desktop-bar">
       <div class="desktop-bar-brand">
         <span>✦</span> WEDINVITE.PK
@@ -1068,7 +1145,7 @@
 
           <!-- Gate HUD: Typography & Interactive Tap Button -->
           <div class="gate-hud" id="gateHud">
-            <div class="bismillah-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="bismillah-gate">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
             <div class="gate-subtitle">The Royal Wedding Celebrations</div>
             <h1 class="gate-title" id="gateCoupleTitle">Hamza &amp; Ayesha</h1>
             <div class="gate-urdu-kicker">جشنِ حنا و شادی مبارک</div>
@@ -1093,195 +1170,278 @@
           </div>
         </button>
 
+        <!-- Side Pagination Dots (Page 1 to 6 Tracker) -->
+        <div class="pagination-tracker" id="pageTracker">
+          <div class="tracker-dot is-active"></div>
+          <div class="tracker-dot"></div>
+          <div class="tracker-dot"></div>
+          <div class="tracker-dot"></div>
+          <div class="tracker-dot"></div>
+          <div class="tracker-dot"></div>
+        </div>
+
         <!-- Hidden Audio Element -->
         <audio id="weddingAudio" loop preload="none" src="assets/music/mehndi-music.mp3"></audio>
 
-        <!-- ==================== 4. INVITATION CARD CONTENT (SCROLL CONTAINER) ==================== -->
+        <!-- ==================== 4. INVITATION 6-PAGE SNAP-SCROLL CONTAINER ==================== -->
         <div class="app-scroll-container is-locked" id="appScrollContainer">
           
-          <div class="card-content">
+          <!-- ================= PAGE 1: HERO & ANNOUNCEMENT ================= -->
+          <section class="invite-page" data-page="0" id="page1">
+            <div class="page-inner-content">
+              <div class="bismillah-card">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
 
-            <!-- Dynamic VIP Guest Allocation Badge -->
-            <div class="vip-guest-pill" id="vipGuestBadge" style="display: none;">
-              <span class="dot">✦</span>
-              <span id="vipGuestText">VIP PASS: Valued Guest • 2 Seats Reserved</span>
-            </div>
-
-            <!-- Royal Monogram Crest -->
-            <div class="crest-wrapper">
-              <span class="crest-initials" id="crestInitials">H&amp;A</span>
-            </div>
-
-            <!-- Quranic Verse on Eternal Love & Mercy -->
-            <div class="quran-box">
-              <div class="quran-arabic">
-                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+              <div class="crest-wrapper">
+                <span class="crest-initials" id="crestInitials">H&amp;A</span>
               </div>
-              <p class="quran-trans">
-                "And among His signs is this, that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."
-              </p>
-            </div>
 
-            <!-- Invitation Hosts Declaration -->
-            <div class="hosts-kicker">IN THE NAME OF ALMIGHTY ALLAH</div>
-            <div class="hosts-names" id="hostsNames">
-              Mr. &amp; Mrs. Tariq Mahmood<br>
-              <span style="font-size: 13px; font-weight: 400; color: var(--text-muted);">&amp;</span><br>
-              Dr. &amp; Mrs. Asim Rauf
-            </div>
+              <div class="page-kicker">IN THE NAME OF ALMIGHTY ALLAH</div>
 
-            <div class="invite-honor-text">
-              Request the honour of your gracious presence &amp; warm prayers at the wedding celebrations of their beloved children
-            </div>
+              <div class="hosts-block" id="hostsNames">
+                Mr. &amp; Mrs. Tariq Mahmood<br>
+                <span style="font-size: 11px; font-weight: 400; color: var(--text-muted);">&amp;</span><br>
+                Dr. &amp; Mrs. Asim Rauf
+              </div>
 
-            <!-- Couple Names -->
-            <div class="couple-title-wrap">
-              <h2 class="groom-name" id="groomName">Hamza Tariq</h2>
-              <span class="parentage-line">(Son of Mr. &amp; Mrs. Tariq Mahmood)</span>
-              
-              <span class="ampersand">&amp;</span>
-              
-              <h2 class="bride-name" id="brideName">Ayesha Asim</h2>
-              <span class="parentage-line">(Daughter of Dr. &amp; Mrs. Asim Rauf)</span>
-            </div>
+              <div class="invite-text">
+                Cordially request the honour of your presence &amp; prayers at the wedding celebrations of
+              </div>
 
-            <!-- Real-time Wedding Countdown Timer -->
-            <div class="countdown-card">
-              <div class="countdown-label">COUNTDOWN TO CELEBRATIONS</div>
-              <div class="countdown-grid">
-                <div class="countdown-item">
-                  <span class="countdown-num" id="cdDays">00</span>
-                  <span class="countdown-unit">Days</span>
-                </div>
-                <div class="countdown-item">
-                  <span class="countdown-num" id="cdHours">00</span>
-                  <span class="countdown-unit">Hours</span>
-                </div>
-                <div class="countdown-item">
-                  <span class="countdown-num" id="cdMins">00</span>
-                  <span class="countdown-unit">Mins</span>
-                </div>
-                <div class="countdown-item">
-                  <span class="countdown-num" id="cdSecs">00</span>
-                  <span class="countdown-unit">Secs</span>
-                </div>
+              <div class="couple-names-wrap">
+                <h2 class="groom-name" id="groomName">Hamza Tariq</h2>
+                <span class="parentage-line">(Son of Mr. &amp; Mrs. Tariq Mahmood)</span>
+                
+                <span class="ampersand">&amp;</span>
+                
+                <h2 class="bride-name" id="brideName">Ayesha Asim</h2>
+                <span class="parentage-line">(Daughter of Dr. &amp; Mrs. Asim Rauf)</span>
               </div>
             </div>
 
-            <!-- MULTI-EVENT TIMELINE (MEHNDI, BARAAT, WALIMA) -->
-            <div class="section-title">WEDDING CEREMONIES</div>
+            <div class="page-next-cue" onclick="scrollToPage(1)">
+              <span>Scroll</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+          </section>
 
-            <div class="events-container">
-              
-              <!-- EVENT 1: MEHNDI & MAYUN -->
-              <article class="event-card">
-                <span class="event-badge mehndi">MEHNDI KI RAAT &bull; مَیندی</span>
-                <h3 class="event-heading">Jashan-e-Henna &amp; Mayun</h3>
-                <div class="event-urdu">محفلِ موسیقی، روایتی ڈھولک و حنا بندی</div>
-                <div class="event-meta">
-                  <div class="meta-row">
-                    <span class="meta-icon">📅</span>
-                    <span><strong>Friday, 12th December 2026</strong></span>
+          <!-- ================= PAGE 2: QURANIC VERSE & COUNTDOWN ================= -->
+          <section class="invite-page" data-page="1" id="page2">
+            <div class="page-inner-content">
+              <div class="page-kicker">THE SACRED UNION</div>
+
+              <div class="quran-box">
+                <div class="quran-arabic">
+                  وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+                </div>
+                <p class="quran-trans">
+                  "And among His signs is this, that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."
+                </p>
+                <div style="font-size: 9px; letter-spacing: 1px; color: var(--gold-dark); text-transform: uppercase;">— Surah Ar-Rum: 21</div>
+              </div>
+
+              <div class="poetry-box">
+                <div class="urdu-shair">
+                  تیری چاہت میں بیتے زندگی کا ہر اک لمحہ<br>
+                  خدا رکھے سلامت یہ محبت کا حسیں بندھن
+                </div>
+              </div>
+
+              <!-- Live Countdown Clock -->
+              <div class="countdown-card">
+                <div class="countdown-label">COUNTDOWN TO CELEBRATIONS</div>
+                <div class="countdown-grid">
+                  <div class="countdown-item">
+                    <span class="countdown-num" id="cdDays">00</span>
+                    <span class="countdown-unit">Days</span>
                   </div>
-                  <div class="meta-row">
-                    <span class="meta-icon">⏰</span>
-                    <span>7:30 PM Onwards</span>
+                  <div class="countdown-item">
+                    <span class="countdown-num" id="cdHours">00</span>
+                    <span class="countdown-unit">Hours</span>
                   </div>
-                  <div class="meta-row">
-                    <span class="meta-icon">📍</span>
-                    <span><strong>Fairways Marquee</strong> &bull; Royal Palm Golf &amp; Country Club, Canal Bank Road, Lahore</span>
+                  <div class="countdown-item">
+                    <span class="countdown-num" id="cdMins">00</span>
+                    <span class="countdown-unit">Mins</span>
+                  </div>
+                  <div class="countdown-item">
+                    <span class="countdown-num" id="cdSecs">00</span>
+                    <span class="countdown-unit">Secs</span>
                   </div>
                 </div>
-                <div class="event-dresscode">
+              </div>
+            </div>
+
+            <div class="page-next-cue" onclick="scrollToPage(2)">
+              <span>Scroll</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+          </section>
+
+          <!-- ================= PAGE 3: EVENT 1 — MEHNDI & MAYUN ================= -->
+          <section class="invite-page" data-page="2" id="page3">
+            <div class="page-inner-content">
+              <span class="event-badge-pill mehndi">MEHNDI KI RAAT &bull; مَیندی</span>
+
+              <div>
+                <h3 class="event-main-title">Jashan-e-Henna</h3>
+                <div class="event-urdu-title">محفلِ موسیقی، روایتی ڈھولک و حنا بندی</div>
+              </div>
+
+              <div class="event-details-card">
+                <div class="detail-row">
+                  <span class="detail-icon">📅</span>
+                  <span><strong>Friday, 12th December 2026</strong></span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">⏰</span>
+                  <span>7:30 PM Onwards</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">📍</span>
+                  <span><strong>Fairways Marquee</strong><br>Royal Palm Golf &amp; Country Club, Canal Road, Lahore</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">🪕</span>
+                  <span>Dholak, Folk Songs &amp; Henna Rituals</span>
+                </div>
+                <div class="event-dress-line">
                   👗 Dress Code: Festive Mustard Yellow, Emerald Green &amp; Gulabi Pink
                 </div>
-              </article>
+              </div>
 
-              <!-- EVENT 2: BARAAT -->
-              <article class="event-card">
-                <span class="event-badge baraat">BARAAT &bull; بارات</span>
-                <h3 class="event-heading">The Wedding &amp; Rukhsati</h3>
-                <div class="event-urdu">عقدِ نکاح، رخصتی و ظہرانۂ مسرت</div>
-                <div class="event-meta">
-                  <div class="meta-row">
-                    <span class="meta-icon">📅</span>
-                    <span><strong>Sunday, 14th December 2026</strong></span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="meta-icon">⏰</span>
-                    <span>8:00 PM (Baraat Arrival)</span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="meta-icon">📍</span>
-                    <span><strong>Grand Ballroom</strong> &bull; The Nishat Hotel, Emporium, Johar Town, Lahore</span>
-                  </div>
-                </div>
-                <div class="event-dresscode">
-                  👗 Dress Code: Royal Traditional / Formal Sherwani &amp; Bridal Lehengas
-                </div>
-              </article>
+              <div style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 13px; color: var(--gold-dark);">
+                رنگ، خوشبو اور روایتی دھنوں کی بہار
+              </div>
+            </div>
 
-              <!-- EVENT 3: WALIMA -->
-              <article class="event-card">
-                <span class="event-badge walima">WALIMA &bull; ولیمہ</span>
-                <h3 class="event-heading">Royal Dinner Reception</h3>
-                <div class="event-urdu">دعوتِ ولیمہ و شکرانہ باہم اہلِ خانہ</div>
-                <div class="event-meta">
-                  <div class="meta-row">
-                    <span class="meta-icon">📅</span>
-                    <span><strong>Tuesday, 16th December 2026</strong></span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="meta-icon">⏰</span>
-                    <span>8:00 PM Onwards</span>
-                  </div>
-                  <div class="meta-row">
-                    <span class="meta-icon">📍</span>
-                    <span><strong>Crystal Hall</strong> &bull; Pearl Continental Hotel, Shahrah-e-Quaid-e-Azam, Lahore</span>
-                  </div>
+            <div class="page-next-cue" onclick="scrollToPage(3)">
+              <span>Scroll</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+          </section>
+
+          <!-- ================= PAGE 4: EVENT 2 — BARAAT ================= -->
+          <section class="invite-page" data-page="3" id="page4">
+            <div class="page-inner-content">
+              <span class="event-badge-pill baraat">BARAAT &bull; بارات</span>
+
+              <div>
+                <h3 class="event-main-title">The Grand Baraat</h3>
+                <div class="event-urdu-title">عقدِ نکاح، رخصتی و ظہرانۂ مسرت</div>
+              </div>
+
+              <div class="event-details-card">
+                <div class="detail-row">
+                  <span class="detail-icon">📅</span>
+                  <span><strong>Sunday, 14th December 2026</strong></span>
                 </div>
-                <div class="event-dresscode">
+                <div class="detail-row">
+                  <span class="detail-icon">⏰</span>
+                  <span>8:00 PM (Baraat Arrival)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">📍</span>
+                  <span><strong>Grand Ballroom</strong><br>The Nishat Hotel, Emporium, Johar Town, Lahore</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">👑</span>
+                  <span>Sehra Bandi, Nikkah Ceremony &amp; Auspicious Rukhsati</span>
+                </div>
+                <div class="event-dress-line">
+                  👗 Dress Code: Royal Traditional Formal / Velvet Sherwani &amp; Bridal Lehengas
+                </div>
+              </div>
+
+              <div style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 13px; color: var(--crimson-royal);">
+                عقدِ مسعود اور شادمانی کا یادگار لمحہ
+              </div>
+            </div>
+
+            <div class="page-next-cue" onclick="scrollToPage(4)">
+              <span>Scroll</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+          </section>
+
+          <!-- ================= PAGE 5: EVENT 3 — WALIMA ================= -->
+          <section class="invite-page" data-page="4" id="page5">
+            <div class="page-inner-content">
+              <span class="event-badge-pill walima">WALIMA &bull; ولیمہ</span>
+
+              <div>
+                <h3 class="event-main-title">Royal Reception</h3>
+                <div class="event-urdu-title">دعوتِ ولیمہ و شکرانہ باہم اہلِ خانہ</div>
+              </div>
+
+              <div class="event-details-card">
+                <div class="detail-row">
+                  <span class="detail-icon">📅</span>
+                  <span><strong>Tuesday, 16th December 2026</strong></span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">⏰</span>
+                  <span>8:00 PM Onwards</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">📍</span>
+                  <span><strong>Crystal Hall</strong><br>Pearl Continental Hotel, Mall Road, Lahore</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">🕊️</span>
+                  <span>Royal Banquet Dinner &amp; Family Blessings</span>
+                </div>
+                <div class="event-dress-line">
                   👗 Dress Code: Classic Pastels, Evening Elegance &amp; Black Tie
                 </div>
-              </article>
-
-            </div>
-
-            <!-- PAKISTANI ACTION BAR (RSVP, DIRECTIONS, SALAMI) -->
-            <div class="section-title">CONVENIENCE &amp; RSVP</div>
-
-            <div class="actions-grid">
-              
-              <!-- WhatsApp RSVP Button -->
-              <button type="button" class="action-cta-btn btn-rsvp" id="btnWhatsappRsvp">
-                <span>💬</span> Confirm Attendance via WhatsApp
-              </button>
-
-              <!-- Google Maps Directions Button -->
-              <button type="button" class="action-cta-btn btn-map" id="btnGoogleMap">
-                <span>📍</span> Get Directions on Google Maps
-              </button>
-
-              <!-- Digital Salami (Raast ID) Button -->
-              <button type="button" class="action-cta-btn btn-raast" id="btnCopyRaast">
-                <span>💳</span> Digital Salami via Raast (Copy ID)
-              </button>
-
-            </div>
-
-            <!-- Footer Blessings & Contact -->
-            <footer class="footer-signoff">
-              <div class="footer-urdu">آپ کی تشریف آوری ہمارے لیے باعثِ افتخار ہو گی</div>
-              <p>R.S.V.P &bull; With Warm Compliments from Both Families</p>
-              <p style="margin-top: 4px; font-weight: 500;">
-                Tariq Mahmood: 0321-3397889 &bull; Dr. Asim Rauf: 0300-4544411
-              </p>
-              <div class="footer-brand">
-                ✦ WEDINVITE.PK &bull; LUXURY DIGITAL INVITATION ATELIER ✦
               </div>
-            </footer>
 
-          </div>
+              <div style="font-family: 'Noto Nastaliq Urdu', serif; font-size: 13px; color: var(--emerald-accent);">
+                شکرانہ و ضیافتِ باوقار
+              </div>
+            </div>
+
+            <div class="page-next-cue" onclick="scrollToPage(5)">
+              <span>Scroll</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+          </section>
+
+          <!-- ================= PAGE 6: RSVP, MAPS & DIGITAL SALAMI ================= -->
+          <section class="invite-page" data-page="5" id="page6">
+            <div class="page-inner-content">
+              <div class="page-kicker">CONVENIENCE &amp; RSVP</div>
+
+              <!-- Dynamic VIP Guest Pass Badge -->
+              <div class="vip-guest-pill" id="vipGuestBadge" style="display: none;">
+                <span style="color:#FFD700">✦</span>
+                <span id="vipGuestText">VIP PASS: Valued Guest • 2 Seats Reserved</span>
+              </div>
+
+              <div style="font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--text-dark);">
+                We Await Your Presence
+              </div>
+
+              <!-- Pakistani Action Bar Buttons -->
+              <div class="actions-grid">
+                <button type="button" class="action-cta-btn btn-rsvp" id="btnWhatsappRsvp">
+                  <span>💬</span> Confirm via WhatsApp
+                </button>
+
+                <button type="button" class="action-cta-btn btn-map" id="btnGoogleMap">
+                  <span>📍</span> View Venue on Maps
+                </button>
+
+                <button type="button" class="action-cta-btn btn-raast" id="btnCopyRaast">
+                  <span>💳</span> Salami via Raast (Copy ID)
+                </button>
+              </div>
+
+              <div class="footer-signoff-block">
+                <div class="footer-urdu-line">آپ کی تشریف آوری ہمارے لیے باعثِ افتخار ہو گی</div>
+                <p>R.S.V.P &bull; 0321-3397889 &bull; 0300-4544411</p>
+                <div class="footer-atelier-tag">✦ WEDINVITE.PK &bull; LUXURY DIGITAL ATELIER ✦</div>
+              </div>
+            </div>
+          </section>
 
         </div>
 
@@ -1309,8 +1469,10 @@
       const phoneNum = urlParams.get('phone') || '923213397889';
       const venueStr = urlParams.get('venue') || 'Royal Palm Golf & Country Club, Lahore';
       const autoOpen = urlParams.get('open') === '1' || urlParams.get('open') === 'true';
+      const skipGate = urlParams.get('skipGate') === '1' || urlParams.get('skip') === '1';
+      const pageParam = parseInt(urlParams.get('page') || '0', 10);
 
-      // Update Couple Names
+      // Update Couple Names & Titles
       document.getElementById('gateCoupleTitle').textContent = `${groom} & ${bride}`;
       document.getElementById('groomName').textContent = `${groom} Tariq`;
       document.getElementById('brideName').textContent = `${bride} Asim`;
@@ -1372,7 +1534,6 @@
       const gateOverlay = document.getElementById('gateOverlay');
       const gatePoster = document.getElementById('gatePoster');
       const gateVideo = document.getElementById('gateVideo');
-      const gateHud = document.getElementById('gateHud');
       const appScroll = document.getElementById('appScrollContainer');
       let isGateOpened = false;
 
@@ -1418,11 +1579,47 @@
       gateOverlay.addEventListener('click', openInvitation);
       gateOverlay.addEventListener('touchend', openInvitation);
 
-      if (autoOpen) {
+      // --- 4. PAGINATION TRACKER (DOTS) ---
+      const pages = document.querySelectorAll('.invite-page');
+      const dots = document.querySelectorAll('.tracker-dot');
+
+      if (skipGate) {
+        if (gateOverlay) {
+          gateOverlay.style.display = 'none';
+        }
+        if (appScroll) {
+          appScroll.classList.remove('is-locked');
+          if (pageParam >= 0 && pageParam < pages.length) {
+            appScroll.scrollTop = pageParam * appScroll.clientHeight;
+            pages[pageParam].scrollIntoView({ behavior: 'instant' });
+          }
+        }
+      } else if (autoOpen) {
         setTimeout(openInvitation, 300);
       }
 
-      // --- 4. SLOW CONSTANT FLORAL SHOWER (CANVAS 60FPS) ---
+      function updatePagination() {
+        const scrollTop = appScroll.scrollTop;
+        const pageHeight = appScroll.clientHeight;
+        const activeIndex = Math.min(Math.round(scrollTop / pageHeight), pages.length - 1);
+
+        dots.forEach((dot, idx) => {
+          if (idx === activeIndex) {
+            dot.classList.add('is-active');
+          } else {
+            dot.classList.remove('is-active');
+          }
+        });
+      }
+      appScroll.addEventListener('scroll', updatePagination, { passive: true });
+
+      window.scrollToPage = function(index) {
+        if (index >= 0 && index < pages.length) {
+          pages[index].scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      // --- 5. SLOW CONSTANT FLORAL SHOWER (CANVAS 60FPS) ---
       const canvas = document.getElementById('floralCanvas');
       const ctx = canvas.getContext('2d');
 
@@ -1436,7 +1633,7 @@
 
       // Flower Petals Configuration
       const petals = [];
-      const petalCount = 28; // Elegant, gentle, not overcrowded
+      const petalCount = 26; // Slow, romantic, perfectly distributed
       const petalColors = [
         { r: 225, g: 70, b: 88, a: 0.75 },   // Rose Pink/Red
         { r: 242, g: 153, b: 74, a: 0.8 },   // Marigold / Genda Orange
@@ -1448,9 +1645,9 @@
         petals.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: 7 + Math.random() * 8,
-          speedY: 0.6 + Math.random() * 0.9,     // Slow gentle fall
-          speedX: (Math.random() - 0.5) * 0.6,   // Subtle drift
+          size: 7 + Math.random() * 7,
+          speedY: 0.5 + Math.random() * 0.7,     // Gentle slow descent
+          speedX: (Math.random() - 0.5) * 0.5,   // Subtle drift
           angle: Math.random() * Math.PI * 2,
           angleSpeed: (Math.random() - 0.5) * 0.02,
           color: petalColors[Math.floor(Math.random() * petalColors.length)],
@@ -1466,16 +1663,14 @@
 
         ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.color.a})`;
         ctx.beginPath();
-        // Romantic curved petal shape
         ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
         ctx.fill();
 
-        // Subtle highlight ridge
-        ctx.strokeStyle = `rgba(255, 255, 255, 0.2)`;
+        ctx.strokeStyle = `rgba(255, 255, 255, 0.25)`;
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(-p.size * 0.6, 0);
-        ctx.lineTo(p.size * 0.6, 0);
+        ctx.moveTo(-p.size * 0.5, 0);
+        ctx.lineTo(p.size * 0.5, 0);
         ctx.stroke();
 
         ctx.restore();
@@ -1490,7 +1685,6 @@
           p.angle += p.angleSpeed;
           p.x += Math.sin(p.y * p.swingSpeed) * p.swing + p.speedX;
 
-          // Wrap around top when petal falls off bottom
           if (p.y > canvas.height + 20) {
             p.y = -20;
             p.x = Math.random() * canvas.width;
@@ -1505,8 +1699,7 @@
       }
       requestAnimationFrame(updatePetals);
 
-      // --- 5. WEDDING COUNTDOWN TIMER ---
-      // Target Date: December 12, 2026 at 19:30:00 (Mehndi Night)
+      // --- 6. WEDDING COUNTDOWN TIMER ---
       const targetDate = new Date('2026-12-12T19:30:00+05:00').getTime();
 
       function updateCountdown() {
@@ -1534,7 +1727,7 @@
       setInterval(updateCountdown, 1000);
       updateCountdown();
 
-      // --- 6. PAKISTANI ACTION BUTTONS (RSVP, MAPS, RAAST) ---
+      // --- 7. PAKISTANI ACTION BUTTONS (RSVP, MAPS, RAAST) ---
       const toast = document.getElementById('toastMsg');
       function showToast(text) {
         if (!toast) return;
